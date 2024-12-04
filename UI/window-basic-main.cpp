@@ -2028,7 +2028,7 @@ static inline void LogEncoders()
 {
 	constexpr uint32_t hide_flags = OBS_ENCODER_CAP_DEPRECATED | OBS_ENCODER_CAP_INTERNAL;
 
-	auto list_encoders = [](obs_encoder_type type) {
+	auto list_encoders = [&](obs_encoder_type type) {
 		size_t idx = 0;
 		const char *encoder_type;
 
