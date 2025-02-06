@@ -34,9 +34,11 @@ const char *get_module_extension(void)
 	return ".dll";
 }
 
-static const char *module_bin[] = {"../../obs-plugins/64bit"};
+//static const char *module_bin[] = {"../../obs-plugins/64bit"};
+static const char *module_bin[] = {"obs-plugins/64bit"};
 
-static const char *module_data[] = {"../../data/obs-plugins/%module%"};
+//static const char *module_data[] = {"../../data/obs-plugins/%module%"};
+static const char *module_data[] = {"data/obs-plugins/%module%"};
 
 static const int module_patterns_size = sizeof(module_bin) / sizeof(module_bin[0]);
 
@@ -52,7 +54,8 @@ char *find_libobs_data_file(const char *file)
 	struct dstr path;
 	dstr_init(&path);
 
-	if (check_path(file, "../../data/libobs/", &path))
+	//if (check_path(file, "../../data/libobs/", &path))
+	if (check_path(file, "data/libobs/", &path))
 		return path.array;
 
 	dstr_free(&path);
